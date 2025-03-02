@@ -1,0 +1,56 @@
+Original Prompt: These are rules to use to label the following Software Engineering statements as "Toxic" with "YES" or "Non-Toxic" with "NO". 
+
+Rule 1: If a text includes profane or curse words, it would be marked as "toxic"
+Rational: Profanities are the most common sources of online toxicities. 
+Example: "fuck! Consider it done!" is toxic. 
+
+Rule 2: If a text includes an acronym, which generally refers to an expletive or swearing, it would be marked as "toxic"
+Rational: Sometimes people use acronyms of profanities, which are equally toxic as their expanded form.
+Example: "WTF are you doing!"
+
+Rule 3: Insulting remarks regarding another person or entities would be marked as "toxic" 
+Rational: Insulting another developer may create a toxic environment and should not be encouraged.
+Example: "...shut up, smartypants."
+
+Rule 4: Attacking a person’s identity  (e.g., race, religion, nationality, gender, or sexual orientation) would be marked as "toxic"
+Rational: Identity attacks are considered toxic among all categories of online conversations.
+Example: "Stupid fucking superstitious Christians."
+
+Rule 5: Aggressive behavior or threatening another person or a community would be marked as "toxic"
+Rational: Aggregations or threats may stir hostility between two developers and force the recipients to leave the community.
+Example: "yeah, but I’d really give a lot for an opportunity to punch them in the face."
+
+Rule 6: Both implicit or explicit references to sexual activities would be marked as "toxic" 
+Rational: Implicit or explicit references to sexual activities may make some developers, particularly females, uncomfortable and make them leave a conversation.
+Example: "This code makes me so horny. It’s beautiful."
+
+Rule 7: Flirtations would be marked as "toxic"
+Rational: Flirtations may also make a developer uncomfortable and make a recipient avoid the other person during future collaborations.
+Example: "I really miss you my girl."
+
+Rule 8: If a demeaning word (e.g., "dumb," "stupid," "idiot," "ignorant") refers to either the writer him/herself or his/her work, the sentence would not be marked as "toxic" if it does not fit any of the first seven rules.
+Rational: It is common in the SE community to use those words for expressing their own mistakes. In those cases, the use of those toxic words with regard to themselves or their work does not make toxic meaning. Although such texts are unprofessional, they do not degrade future communication or collaboration.
+Example: "I’m a fool and didn’t get the point of the deincrement. It makes sense now."
+
+Rule 9: A sentence that does not fit rules 1 through 8 would be marked as "non-toxic." 
+Rational: General non-toxic comments. 
+Example: "I think ResourceWithProps should be there instead of GenericResource."
+A definition of a toxic statement related to software engineering is a statement that makes the user reading it feel negative feelings. 
+
+A definition that not-toxic for software engineering is a statement that makes the user reading it feel happy. It might make a person laugh. A joke that does not relate to the code written or the person reason is not-toxic.
+Rule 8b: If 'kill' is used in a context that is not related to code, it is toxic. If it is used in a code context, it is not toxic. /n “Rule 8c: If the demeaning word could have been replaced with a less offensive word, it is toxic”“Rule 8c: If the demeaning word could have been replaced with a less offensive word, it is toxic. /nYes or no, then why? Is this a toxic set of text from developers talking about code: This should wipe prev_deleted_link_ otherwise you can delete, insert, undelete and get more than kMaxNumLinks items.
+AnalysisSummary{totalTruePositives=34
+, totalTrueNegatives=50
+, totalFalsePositives=0
+, totalFalseNegatives=116
+, totalRecords=200
+, totalOriginalToxic=150
+, totalOriginalNotToxic=50
+, totalReplyToxic=34
+, totalReplyNotToxic=166
+, totalReplyUnsure=0
+, totalErrorReply=0
+, percision=1.0
+, recall=0.22666666666666666
+, f1Score=0.3695652173913044
+}

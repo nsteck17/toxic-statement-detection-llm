@@ -1,0 +1,322 @@
+Code_Review_Message,Is_Toxic
+"Yuck. Use %.70s, which will do this more gracefully",1
+"In the future, we should look into seeing if we make this a little cleaner instead of a crap load of info() lines.",1
+lazy-lazy =),1
+"yeah that sucked, fixed
+ 
+ Done.",1
+LOL you called my decorator stupid...=),1
+"This line is super horrible and needs to die! Please do something like:
+  
+  attempts = 1
+  if retries >= 1:
+  attempts = retries + 1
+ 
+ or something along those lines.
+ 
+ also - a test would be nice (there are already tests that test some cases of this so just add another one in test_compute_mgr.py",1
+Might be cleaner to write an OCP that wraps this and prunes out the downloads... I know that's a lot more code/sucks but that's probably the cleanest way?  Can you just put this in the factory?  Or put it at each client?,1
+"ooh, burn!",1
+"Yes, and ... crap.",1
+stupid style nit - list comprehension is slightly nicer.,1
+"that english language stuff always confused the hell out of me....yep, I kept wordsmithing this line and still didn't like it.",1
+doh. its awful! it should not be our work...,1
+"ah, shit. will fix.",1
+"#ifdef CONFIG_PM_RUNTIME
+
+if you are feeling very anal about saving 1 byte...",1
+"Holy cow, when does this happen? Just tests? Any actual WSGI server that does this is horribly broken.",1
+much better (that acoles is pretty darn good huh...),1
+"Chris, just a question about 'intrusive', how can I understand it? Why it sucks.",1
+Damn! Thought I'd gotten rid of it everywhere. New patch incoming,1
+"damn, and I thought I had gotten it right :P",1
+"Oh, yes, it was inconsistent already. I just copy pasted the previous code. Silly me.",1
+"Basically:
+ 
+ if self.microversion and 'X-OpenStack-Nova-API-Version' in headers and headers['X-OpenStack-Nova-API-Version'] != self.microversion:
+  self.fail('bad test setup i hate you so much')
+ 
+ And:
+ 
+ if not self.microversion and 'X-OpenStack-Nova-API-Version' in headers:
+  self.fail('oh you dirty bastard')",1
+"I think this solution is braindead also, like the previous one. Can we try to ass the null.? Anyway, +2 because safe.",1
+Damn!,1
+"The caching is only necessary for the performance benefit of not needing to do that service query from the DB every time we get an instance, which doubles the traffic to the DB on every instance query, which kind of sucks.
+ 
+ Agree with leaving the caching in, that was my point with removing the TODO so we don't forget about this.",1
+"damnit, I hate it when I forget to save the file before I commit ;-)
+
+yes they were notes as I was coding the C file
+
+Done.",1
+Damn. I thought I'd removed those. Sorry.,1
+"Ah yes, I remember this damm mess now. Unfortunately some of the task code needs a conductor. Seems silly to do that over rpc just for dependency reasons.",1
+"Is this still used anywhere?
+ 
+ (later)
+ 
+ Looks like still used in nova.tests.unit.test_service, so I guess we can't remove it. Damn.",1
+"you can. some people prefer reinterpret_cast because it shouts ""danger! crappy type-unsafe C API here!"". others prefer static_cast because it's the weakest cast that will still work. i'll +2 either (but tend to use reinterpret_cast personally; i've never seen anyone make the mistakes that static_cast would prevent in this specific circumstance).",1
+remove the tabs please - spaces only - the change makes this review a bitch to read and doesn't match the existing formatting.,1
+"Damn, forgot to delete this after the code changed during review... well, better to leave it here than to get inconsistent with ToT now I guess.",1
+Damn! Thought I caught all those! Thanks.,1
+"rather than creating this useless structure, just pass the size in the kmem_cache_create in the _probe function ?
+
+but yeh that's not important, a dirty patch should be dirty....",1
+Crap. Sorry about that. Done.,1
+Damn grammar :-P,1
+How the heck did that get in there? Done....,1
+"might want to inject a pause here prior to the reboot; depends on how fast it cycles (getting a ""go do this"" message when the window is 1s sucks)",1
+This'll crap out if the search fails,1
+"It doesn't relate to your patch, but please, remove this dots. It sucks and unreadable! Also, If this module will be moved in future, everything will break.
+ I prefer to use this simple code:
+ 
+  import rally
+  lookup_dirs = [templates_dir, os.path.dirname(rally)]",1
+"Agree with Alexander, here is where separate validators suck - you may easily not notice the same work is done twice.",1
+"Does this mean that if the header is corrupt, we're screwed?",1
+"The optimizer should usually be able to make this not suck, but thread.name.assign() is more direct.",1
+"hmmmm...that is a good reason to keep mountpoint around. Which kind of sucks. Also, mountpoint is optional from Nova's standpoint, so we probably shouldn't just raise and fail, unless it's a multi-attach to the same instance (the knucklehead case), which means more checks for that case.
+ I vote we just dis-allow that...",1
+"Wtf why did you change "" to ' when we are changing everywhere ' to """,1
+"I think it would be nice if we have more than one choice there, like
+ 
+ if [[ ""$users_agree"" == ""y"" ]] || [[ ""$users_agree"" == ""Y"" ]] || [[ ""$users_agree"" == ""yes"" ]];
+ 
+ I personally hate this situations when I press 'y' and application tell me 'wrong choice, man, bye-bye. In next time you should write full ""yes"", you moron'.",1
+actually C enums don't really check IIRC and never have. You can assign a bogus value. They're not that useful. I'm happy to get rid of this crap however.,1
+"No, indent(1) is dumb. Fixed.",1
+Are we not going to assume error 401 or anything (that I got bitched about with the amphora API proposal still in the review pipeline)?,1
+"darn. you right. :)
+ 
+ peer programming works! or sileht programming works.",1
+"Ok, fair enough.
+ 
+ Just seems like it could be used outside openstack (and if later we have to rename it so that it's more obvious it can be used outside, that sorta sucks to have to go through that process).",1
+I got rid of all the LDAP specific nonsense,1
+"you're right, it looked clumsy when I did it the other way but I think it's the right way. I'll fix it.",1
+"I disagree. In this instance it is an instance that we have partially created, and that the user has no knowledge of its existence. We should not leave half created turds lying around. However, you have drawn attention to that fact that we are eating an exception, which we should not be doing.",1
+damn.. I missed that one. Thanks,1
+"Oh, yeah, what a crap.  Maybe use this cleanup commit to finally get rid of that odd --language handling for good.",1
+"Yes, but I guess this is rabbit issue only, due to the fact that the reply queue have been historically created with auto_delete=True.
+ 
+ Another rabbitmq reported issue in the past was that a HA rabbitmq cluster that failover can in certain circumstance report that the queue doesn't exists just after the failover when It exists in reality. That another reason of why we do this crap.",1
+"I don't agree here, property in python are awful, especially when you want to test such methods.",1
+"The CBManagerState change in the new SDK is so sucky :-( We did https://chromium-review.googlesource.com/c/chromium/src/+/587510/5/device/bluetooth/bluetooth_adapter_mac.mm#43 on Mac (and see discussion on bug linked from that CL). But if this is the only place, this is fine too.",1
+bouh bouh shame,1
+"Damn, someday I'll learn how to spell, lol.",1
+shit :(,1
+You are an evil :O!,1
+Damn abbreviations :-P,1
+"honestly, i might even change it to 60min.  timeouts are supposed to catch the ""this is totally screwed up, let's abort"" not ""we're close to normal, but let's throw up everywhere anyways"".",1
+"Is this still used anywhere?
+ 
+ (later)
+ 
+ Looks like still used in nova.tests.unit.test_service, so I guess we can't remove it. Damn.",1
+"ah, thats nice, encoding stuff already crap",1
+WTF,1
+"Oh, shit, you're right. Is there a less error-prone way to do this than scattering calls to ClearReportsPending throughout the function?",1
+Forget to say. Maybe you have seen suck behaviour in real-life? Could you please provide an example?,1
+Totally clumsy! I dislike it immensely! I think we should make a fileglobbing feature.,1
+I shouldn't need to load an L3 agent to test the DB logic behavior! That's nonsense.,1
+Forgot about this. I'm having a hell of a time getting libcros to find <glib-object.h>. Working on that now.,1
+"This is what the query looks like:
+ 
+ SELECT ports.tenant_id AS ports_tenant_id, ports.id AS ports_id, ports.name AS ports_name, ports.network_id AS ports_network_id, ports.mac_address AS ports_mac_address, ports.admin_state_up AS ports_admin_state_up, ports.status AS ports_status, ports.device_id AS ports_device_id, ports.device_owner AS ports_device_owner, securitygroupportbindings.security_group_id AS securitygroupportbindings_security_group_id, ipallocations_1.port_id AS ipallocations_1_port_id, ipallocations_1.ip_address AS ipallocations_1_ip_address, ipallocations_1.subnet_id AS ipallocations_1_subnet_id, ipallocations_1.network_id AS ipallocations_1_network_id, allowedaddresspairs_1.port_id AS allowedaddresspairs_1_port_id, allowedaddresspairs_1.mac_address AS allowedaddresspairs_1_mac_address, allowedaddresspairs_1.ip_address AS allowedaddresspairs_1_ip_address, ml2_port_bindings_1.port_id AS ml2_port_bindings_1_port_id, ml2_port_bindings_1.host AS ml2_port_bindings_1_host, ml2_port_bindings_1.vnic_type AS ml2_port_bindings_1_vnic_type, ml2_port_bindings_1.profile AS ml2_port_bindings_1_profile, ml2_port_bindings_1.vif_type AS ml2_port_bindings_1_vif_type, ml2_port_bindings_1.vif_details AS ml2_port_bindings_1_vif_details, ml2_port_bindings_1.driver AS ml2_port_bindings_1_driver, ml2_port_bindings_1.segment AS ml2_port_bindings_1_segment, securitygroupportbindings_1.port_id AS securitygroupportbindings_1_port_id, securitygroupportbindings_1.security_group_id AS securitygroupportbindings_1_security_group_id, extradhcpopts_1.id AS extradhcpopts_1_id, extradhcpopts_1.port_id AS extradhcpopts_1_port_id, extradhcpopts_1.opt_name AS extradhcpopts_1_opt_name, extradhcpopts_1.opt_value AS extradhcpopts_1_opt_value, ml2_dvr_port_bindings_1.port_id AS ml2_dvr_port_bindings_1_port_id, ml2_dvr_port_bindings_1.host AS ml2_dvr_port_bindings_1_host, ml2_dvr_port_bindings_1.router_id AS ml2_dvr_port_bindings_1_router_id, ml2_dvr_port_bindings_1.vif_type AS ml2_dvr_port_bindings_1_vif_type, ml2_dvr_port_bindings_1.vif_details AS ml2_dvr_port_bindings_1_vif_details, ml2_dvr_port_bindings_1.vnic_type AS ml2_dvr_port_bindings_1_vnic_type, ml2_dvr_port_bindings_1.profile AS ml2_dvr_port_bindings_1_profile, ml2_dvr_port_bindings_1.cap_port_filter AS ml2_dvr_port_bindings_1_cap_port_filter, ml2_dvr_port_bindings_1.driver AS ml2_dvr_port_bindings_1_driver, ml2_dvr_port_bindings_1.segment AS ml2_dvr_port_bindings_1_segment, ml2_dvr_port_bindings_1.status AS ml2_dvr_port_bindings_1_status 
+ FROM ports LEFT OUTER JOIN securitygroupportbindings ON ports.id = securitygroupportbindings.port_id LEFT OUTER JOIN ipallocations AS ipallocations_1 ON ports.id = ipallocations_1.port_id LEFT OUTER JOIN allowedaddresspairs AS allowedaddresspairs_1 ON ports.id = allowedaddresspairs_1.port_id LEFT OUTER JOIN ml2_port_bindings AS ml2_port_bindings_1 ON ports.id = ml2_port_bindings_1.port_id LEFT OUTER JOIN securitygroupportbindings AS securitygroupportbindings_1 ON ports.id = securitygroupportbindings_1.port_id LEFT OUTER JOIN extradhcpopts AS extradhcpopts_1 ON ports.id = extradhcpopts_1.port_id LEFT OUTER JOIN ml2_dvr_port_bindings AS ml2_dvr_port_bindings_1 ON ports.id = ml2_dvr_port_bindings_1.port_id 
+ WHERE ports.id IN (:id_1, :id_2, :id_3, :id_4, :id_5, :id_6)
+ 
+ Maybe we want to disable eager loading so it doesn't pull in all that crap we don't need? We really only want the port and security groups?",1
+"stupid IDE, good catch",1
+"OMG, this alias is terrible!",1
+this is the only new bit. stupid git.,1
+"Normally I'm anal about avoiding duplication, but there is subtle enough differences between each that it's not really worth it; same goes for the prefix bit imo.",1
+Ah damn I misread the bug -_-,1
+"Crap, I thought I had that in there.",1
+"I'll be damned. I just assumed that weak_ptr needs a full definition of ServiceProxy to generate the default destructor of WeaveClient. But I actually tried and it works just fine (I guess because refcount is not really stored in the controlled class but in a separate storage). Anyway, removed the destructor altogether.",1
+"Yea, it is a bit messy - and particularly when considering arm32-style paired single registers.  I think a portable sameness test would be something like:
+
+  bool IsSameReg(RegStorage reg1, RegStorage reg2) {
+    RegisterInfo* info1 = GetRegInfo(reg1);
+    RegisterInfo* info2 = GetRegInfo(reg2);
+    return  (info1->Master() == info2->Master()) &&
+            ((info1->StorageMask() & info2->StorageMask()) != 0);
+  }
+
+Yuck.",1
+I would have kept the comments out of the localrc generated but I am anally retentive.,1
+"because bash sucks (and I suck at writing bash also), it doesn't like the empty array when you run with -u.",1
+Damn grammar :-P,1
+I really hate the 'i' as it smells like hungarian notation. I'd like something more self documenting. How about nocase? __startswith_nocase=Y,1
+"I know this is incredibly anal, but to you want to make this an atomic operation? I think this is going to be atomic no matter what, but maybe it should be explicit so there is no chance that someone will be able to get a half set value.",1
+"Crap, this is an artifact of a previous revision. It's simply the last time a change was made to Tuskar's cloud.",1
+"Yes, doc strings in unit tests suck because they cause the name of the failing test to be hidden.",1
+"Yes, unfortunately this does add some fragility here. Though you are wrong that it is inserting namespace data. And of course if the compiler does add that, it would make for a 100% failure rate of the test (fun fact: __func__ apparently at least on the Android build system is resolved to __PRETTY_FUNCTION__ which does add a lot of crap).
+
+As per the commend on the hardcoded strings though, this way we are ensuring we have to correct mapping and don't require constants for everything that is redundant and makes it harder to add tests.
+
+Again, this is a test - not another abstraction layer on top of a HAL on top of an API...",1
+"Damn you're right, should be
+
+static constexpr uint32_t kBuiltinPrefix = (uint32_t('g') << 16) + (uint32_t('l') << 8) + uint32_t('_') ;
+uint32_t prefix = *reinterpret_cast<const uint32_t*>(name.c_str());
+return name.size() >= 4 && (prefix >> 8) == kBuiltinPrefix;",1
+"Those bastards! But my point is, there should be an uppercase L in 'liberty'.",1
+Oh god damn it.,1
+hmm.. that's actually a lot prettier. darn.,1
+"I really hate those. Not sure what the officiel OpenStack policy is, though.",1
+"(Yuck, I think min and max would actually have to query rd.min() and rd.max()).",1
+ya. darn. i thought i snagged all these.,1
+"From IRC:
+ 
+  <mordred> hell, I think run_tests.sh is an abomination anyway - I can't imagine having it call out to a project-specific thing will be any worse if it gets us a bulk of things to be oslo
+ 
+ so I think it's worth giving the tools/run_tests_common.sh idea a try",1
+"If someone stupidly configures retry_attempts to be 0, then this won't execute at all. Logging an error is probably warranted. We might also consider treating invalid values as being ""1""... just because somebody is bound to misconfigure and go scratching their heads when things go sideways.",1
+exact same thing as a dumb mmap,1
+"One way to make exploitation harder even if there's no guard page would be to add weak secondary stack ASLR in Bionic. The problem with that is it can screw over callers with very precisely sized stacks, as they'll have less available than they expect.
+
+Using a single page for ASLR with stacks >= 1M is arguably sane because they could be screwed over by a compiler update if they're that close to the end...
+
+I have a patch doing this but it's pretty sketchy so I didn't have plans to upstream it.",1
+"Oh I dislike this line, it's abosolutelly unclear what the hell you are doing here=).",1
+Can we reduce this down to 1 sec or so? 5 seems awful large!,1
+"This part is apparently not true. (if by upper layers, you mean other parts of flashrom.)
+
+I tried 'flashrom --read /tmp/c.bin' on Kevin, and this produced a large (full 8MB I think?) read, which apparently the SPI driver still can't handle. I need to fix that up...
+
+But this means unfortunately, we should keep the hack for now, and loop over eraseblock sized chunks in the 'read' path still. And for your sake, we can do the same for writes. (I just objected to changing the ""page size"".)
+
+Sorry for jerking you around a bit :) I'll try to fix things up on the MTD side a bit, so we don't have to live with these hacks forever.",1
+check yourself before you wreck yourself...,1
+crap. i suspect we're really just papering over the real bug here.,1
+"Oops, brain fart :-) Sorry, I had misread that page (I overlooked the fact that most overloads only applied to unique_ptr<T[]>). Shutdown() got removed altogether in the end, so we won't be needing either version.",1
+"as previously, you need to put this in a USE_ANDROID_EMU block, and provide a solution that works with a single server for the non AndroidEmu build of QEMU2. I know that sucks, sorry about that :(",1
+Why the hell we need a copy?!,1
+wtf...,1
+"Unique constraints or indexes on nullable columns are absolutely stupid, anyway. I fully support getting rid of these cases in the DB schema.",1
+"damn, i thought i got all those.",1
+"Also explain in this file why the compiler was failing, and dx's smart/dumb behavior.",1
+"Interesting -- that kinda sucks, but I guess as long as this works, for now...",1
+"yes, i guess i was understating :P damn Brits",1
+"Running dd as root allows about a billion compromises, so this should be tightened at some point (being able to tighten being the whole point of rootwrap). Getting the tightening right is damn hard though, so should probably be a separate bug.",1
+"Oh, damn it. Now I get it. Yeah that makes sense. Ignore my comment :-)",1
+what if the directory doesn't exist locally? Will this be created? If so I wonder if subsequent stack.sh may end up screw up permissions? If not since this is supposed to be owned by the 'stack' user?,1
+"Lazy boy, you could write ceilometer.conf entirely :)",1
+"I was thinking exactly the same. This was taken from another driver, but it seems silly.",1
+"(No action required) validating behavior, lovely :/ Can't wait for you to replace this crap with their functional betters.",1
+"Anal, but I can mention it may be used by third party packages. :)",1
+"Done
+
+Damn it...",1
+"Oops... what the hell...
+ 
+ mysql> drop user 'test'@'localhost';
+ ERROR 1396 (HY000): Operation DROP USER failed for 'test'@'localhost'
+ 
+ So I had user 'test'...
+ 
+ But as long as we create these users and generate random names for them, we should be fine with this.
+ 
+ Stupid MySQL... It seems that there is no easy way to drop a user only if it exists.",1
+"Damn, I meant to and then I forgot.",1
+"Just for readability, but it does look a bit silly now.",1
+any reasons for not using @decorators or context managers here? It's strange you don't stop these mocks.,1
+"Damned if you do, damned if you don't (I'm doing it because I've gotten nits about it).
+
+I do the same as you're suggesting in other code bases...",1
+"You mean after executing the template? It is not trivial, since \n are significant inside code snippets.
+
+I failed to understand how to force text/template to emit correct spaces. I tried {- and -} and various combinations of thereof. This shit is insane. I gave up.",1
+stupid trailing space,1
+Format requires () and not <> around emails. I know it sucks.,1
+Oh crap! I missed this!!!!,1
+All this shit will be better in the next patch.,1
+liar!,1
+You mean here and on lines 60 and 62? Those exception are just to verify that this fixup works... And I need Jenkins to fail to see either one of those messages. And nothing fails! Damn heisenbug!,1
+I hate to be anal but shouldn't the equals be extended a little farther out to match the number of characters in Federation?,1
+Could i selfishly add this by the next patch? Just to keep your precious +2? ...a little shame.,1
+"Oh good catch, dammit, I should definitely write a new Object then.",1
+Done. Curse my cargoculting!,1
+"This was actually shockingly bad, since it meant that we'd always calculate the hashed id even if the blacklist was empty.  Yuck!",1
+"no. this is cute, but EXIT_FAILURE is a system dependant constante
+which does not have to be -1. iow that create a risk of regression, just to be cute
+
+not to mention the wtf factor of prefixing fprintf, for instance",1
+"Sorry, I suck. I should have also told you to put this in pkg_preinst()",1
+"Done.
+Of course, excuse the brain fart :)",1
+Damn! Thought I caught all those! Thanks.,1
+you sneaky bastard :) I'm not going to touch these patches til clay gives the word but yeah we thought of doing something different here anyways as the name isn't very good and when we do we should definitely make it reserved,1
+"Oops, nevermind. Stupid python.",1
+Holy cow this method is long! f'ng urls!,1
+WTF?,1
+"does this do the right thing with something like ""fucke999999999999999999999999999999""?",1
+"Yuck, don't know how that slipped through. Thanks!",1
+"well that sucks. in that case, redefining the partial right before you use it defeats the point of having the re-usable shortcut (you're not re-using it). abandon partials in _handle_unscoped_token()?",1
+Another newline.,0
+"you might want to log abort for todo as well, either wakeup or todo will return EBUSY and abort suspend.",0
+"Please, instead ""v_p_n"" write ""vol_per_node"". Also v_p_n and vol_size are numbers thus better write vol_per_node=0 and vol_size=0.",0
+"These static values should be put at the top, i.e. DEFAULT_CIPHER = 3.",0
+This try..catch is useless,0
+PENDING_CREATE is hardcoded VPNPluginDb.create_vpnservice. Setting status is unnecessary,0
+You're right. This needs to be removed.,0
+useless 'close == release',0
+pecan.abort should be replaced with format_error,0
+"Yeah, I'll undo these changes.",0
+WS to kill,0
+"Silly, I know, but would you mind sticking this in alphabetical order? :)",0
+_test_attach_interface has a @mock decorator. Calling it with like this will override the mocked argument. Call with key-value arguments instead.,0
+"dummy sgtm, also stub/fake might be an alternative if you find it better than dummy.",0
+"(nit) if trying to keep the pseudo-alphabetical order, place this after oslo.middleware
+ 
+ oslo.db is messing up the alphabetical order",0
+We use `items` instead of `iteritems` for py3 compat.,0
+This is a little lame returning a string. I'll change it to a mock.,0
+"Then 2 zeros will be appended. Sorry, I must be dumb.",0
+"self._my_id doesn't exist, it's self._coordination_id",0
+This should be called devtest_overcloud_images.sh.,0
+could use `die` instead,0
+This is an internal DRBD id.,0
+"so what about ""$@"" ? we should bail out if it isn't 0.",0
+"Ignore this, I am talking rubbish. I'll change to datetime.",0
+-1: Better move these mocks to `_test_copy_image_to_volume_stream_optimized`,0
+"traitorous fingers ;P
+ 
+ thanks for the +2 anyway",0
+Let's capitalise it to be consistent.,0
+Correct hash: 7e3b7dc76c41f9042a7079eb07d071f744bbd87a,0
+# vAA <- a0,0
+Probably want to kill this comment,0
+Not actually sure this is useful. Under what scenario would a developer *not* want to stop mock patchers on tearDown?,0
+"stupid question.. dm-dnsmasq isn't a thing right, you meant bm-dnsmasq... ?",0
+"Again, backslashes here are unnecessary and should be removed.",0
+should this be const& here and elsewhere or do we intend to pass by value?,0
+"So here you will reintroduce bug waiting to be fixed here https://review.openstack.org/#/c/202442/
+ 
+ You should probably rebase you work on top of it.",0
+"Ack.
+
+Didn't see that I did this. Absolutely no reason to touch it so I guess fat fingers.",0
+"actually, should get rid of format_map.py and just use TrustTokenFormatter.token_format rather than format_map.TRUST_TOKEN_PREFIX.",0
+useless now :),0
+Should be executed after for loop ends.,0
+"`_' clashes with wide-used gettext translation function. I know another popular idiom `dummy', for example:
+ 
+  dummy, my_var = some_tuple",0
+(nit) Useless blank,0
+"I don't got it:  if I remove  virtio_dumb_resolve_format, this will change dumb path, you mean this won't introduce regression for dumb? 
+This abosolutely won't change virgl path.
+
+Or you mean use the dumb verion to replace the current virgl version?",0
+New exception to use rather than calling cros_build_lib.Die() from this module.,0
+"I do apologize for this.
+ I am a mess and I should be hanged upside down.",0
+Diese Uebersetzung verliert den interessanten Teil des Kommentars.,0
+why not ceph-mon@$(hostname)?,0
+<literal>47af...</literal>,0
+/* sortAnnotations */,0
+"Let's use ""Implements"" for tracking purposes in launchpad; we may create another bp for the other phases if needed",0
+"This should wipe prev_deleted_link_ otherwise you can delete, insert, undelete and get more than kMaxNumLinks items.",0
